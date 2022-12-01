@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1ea8172dc8.js" crossorigin="anonymous"></script>
+    <title>static page</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Kalam:wght@300;400;700&display=swap');
+        html{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family:'Kalam', cursive;
+         
+        }
+        a,li{
+            text-decoration: none;
+            list-style-type: none;
+        }
+        .top-container{
+            height:43rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 4.3rem auto auto 5rem;
+            grid-template-areas: 
+            "header header header"
+            "main main main"
+            "main main main"
+            "footer footer footer";
+            grid-gap: 10px;
+            
+        }
+        /* Header section */
+        .header{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            grid-area: header;
+            border-bottom: 2px dashed rgb(217, 25, 25);
+            background-color: #CE0505;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .navbar .navbrand{
+            position: absolute;
+            left: 5rem;
+            color: #EB2929;
+            background-color: white;
+            font-size: 2rem;
+            width: 2rem;
+            height: 2.937rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 50%;
+            text-align: center;
+           
+            font: normal normal 600 33px/50px Poppins;
+        }
+        .navbar .nav-menu{
+            position:absolute;
+            right: 4rem;
+        }
+        .navbar .nav-menu li{
+            
+            display: inline-block;
+            color: crimson;
+            
+        }
+        .navbar .nav-menu li [class*="create"]{
+            border:1px solid white;
+            padding: 0.5rem 0.8rem;
+            margin-left:0.5rem;
+        }
+        [class*="create"]:hover{
+            cursor: pointer;
+            /* background-color: rgba(255, 255, 255, 0.5); */
+            color: #f31010;
+            transition:  90ms ease-in-out;
+        }
+        
+        
+
+        .navbar .nav-menu .nav-items{
+            padding-left: 0.5rem;
+            font-size: 1.4rem;
+            color: rgb(255, 255, 255);
+            
+        }
+        
+        .main{
+            grid-area: main;
+            background-color: white;
+            color: #192F60;
+        }
+        .main .heading{
+            position: absolute;
+            top: 5rem;
+            left: 6rem;
+            font: normal normal 800 28px/34px Poppins;
+        }
+        .filter-section{
+            margin-left: 5rem;
+            margin-top: 3.5rem;
+            justify-content: space-around;
+            padding-left:1rem ;
+            flex-wrap: nowrap;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #d60f0f29;
+            width: 15rem;
+            line-height: 0.8;
+        }
+        .sub-headings{
+            display: block;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+        
+        .location-menu{
+            display: block;
+            width: 208px;
+            height: 35px;
+        }
+        .break-rule{
+             display: flex;
+            flex-direction: column;
+            position: relative;
+            top: -0.6rem;
+            left: 2rem;
+            line-height: 0.5;
+        }
+        
+        .filter-section .h3-headings{
+          margin-bottom: 0;
+        font: normal normal 600 18px/27px Poppins;
+        }
+        /* Main card section */
+        .card-section{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 2px 3px 6px #d60f0f29;
+            position: relative;
+            width: 774px;
+            height: 15.625rem;
+            line-height: 0.6; 
+        }
+        .card1{
+            position: absolute;
+            left: 28rem;
+            top: 7rem;
+        }
+        .card2{
+            position: absolute;
+            left: 28rem;
+            top: 24rem;
+        }
+        .card-img img{
+            height: 100px;
+            width: 100px;
+            border-radius: 30%;
+            position: absolute;
+            left: 2rem;
+            top: 2rem;
+        }
+        .card-info-text{
+            position: absolute;
+            top: 2rem;
+            left: 10rem;
+        }
+        .divider{
+            position: absolute;
+            top: 10rem;
+            border-bottom: 1px solid rgb(218, 217, 219);
+            width: 90%;
+            left:2.5rem;
+        }
+        .card-details{
+            position: absolute;
+            top:12.4rem;
+            left: 2rem;
+            line-height: 1.2;
+            text-align: left;
+            font-size: 0.9rem; 
+        }
+        .card-details td{
+        position: absolute;
+        left: 10rem;
+        }
+        .navigator{
+            /* position: absolute; */
+            left: 35rem;
+            bottom: 1rem;
+            position: fixed;
+        }
+        .navigator ul li {
+            display: inline;
+            
+        }
+        .navigator-items{
+            color: gray;
+            border: 1px solid green;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 0 0.8rem;
+            border-radius:10% ;
+        }
+        .navigator-items:hover{
+            cursor: pointer;
+            background-color: rgba(255, 0, 0, 0.5);
+            color: #FFFFFF;
+            transition:  90ms ease-in-out;
+        }
+    
+       @media (max-width:780px){
+        .card{
+            left:20rem;
+            width: 26rem;
+            height: 12.625rem;
+            line-height: 0.2; 
+            font-size: 0.8rem;
+
+        }
+        .card-img img{
+            height: 70px;
+            width: 70px;
+        }
+        .card-info-text{
+            top: 2rem;
+            left: 7rem;
+        }
+        .divider{
+            width: 90%;
+            left:2.5rem;
+            top:8.5rem
+        }
+        .card-details{
+            top:9rem;
+            width: 90%;
+            left:2rem;
+        }
+
+       }
+        
+       </style>
+</head>
+<body>
+    <div class="top-container">
+        
+        <section class="header">
+            <nav class="navbar">
+                <div class="navbrand">
+                    e!
+                </div>
+                <div class="nav-menu">
+                    <ul>
+                        <li><a href="#" class="nav-items">Login</a></li>
+                        <li><a href="#" class="nav-items create" >Create an account</a></li>
+                           
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <!-- <section class="sidebar">sidebar</section> -->
+        <section class="main">
+            <h1 class="heading">
+                BreakFast Places in Mumbai
+            </h1>
+            <div class="filter-section">
+                <h3 class="h3-headings">Filters</h3>
+                <div class="selection-menu">
+                    <span class="location sub-headings">Select Location</span>
+                    <select name="select Location" id="Location-selector" class="location-menu">
+                        <option value="Selected" selected>Select a location</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Bangaluru">Bangaluru</option>
+                    </select>
+                </div>
+                <div class="meal-type">
+                    <span class="sub-headings">Cuisine</span>
+                    <input type="checkbox" class="selections"><span class="break-rule">North India</span></input>
+                    <input type="checkbox" class="selections"><span class="break-rule">South India</span></input>
+                    <input type="checkbox" class="selections"><span class="break-rule">Chinese</span></input>
+                    <input type="checkbox" class="selections"><span class="break-rule">Fast Food</span></input>
+                    <input type="checkbox" class="selections" ><span class="break-rule">Street Food</span></input>
+                </div>
+                <div class="range">
+                    <span class="sub-headings">Cost For Two</span>
+                    <input type="radio" name="cost" id="" class="cost"><span class="break-rule">Less than 500</span></input>
+                    <input type="radio" name="cost" id="" class="cost"><span class="break-rule">500 to 1000</span></input>
+                    <input type="radio" name="cost" id="" class="cost"><span class="break-rule">1000 to 1500</span></input>
+                    <input type="radio" name="cost" id="" class="cost"><span class="break-rule">1500 to 2000</span></input>
+                    <input type="radio" name="cost" id="" class="cost"><span class="break-rule">2000+</span></input>
+                </div>
+                <div class="sort-section">
+                    <h3 class="h3-headings">Sort</h3>
+                    <input type="radio" name="sort" id="" class="cost"><span class="break-rule">Price low to high</span></input>
+                    <input type="radio" name="sort" id="" class="cost"><span class="break-rule">Price high to low</span></input>
+                </div>
+            </div>
+            <div class="card-section">
+                <div class="card card1">
+                    <div class="card-img">
+                        <img src="breakfast.png" alt="">
+                    </div>
+                    <div class="card-info-text">
+                        <h3>The baker shop</h3>
+                        <p>Fort</p>
+                        <address>Shop 1, Plor D, Samruddhi Complex, Chincholi ...</address>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="card-details">
+                        <table>
+                            <tr>
+                                <th>Cuisines:</th>
+                                <td>Bakery</td>
+                            </tr>
+                            <tr>
+                                <th>COST FOR TWO:</th>
+                                <td>700</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card card2">
+                    <div class="card-img">
+                        <img src="breakfast.png" alt="">
+                    </div>
+                    <div class="card-info-text">
+
+                        <h3>The baker shop</h3>
+                        <p>Fort</p>
+                        <address>Shop 1, Plor D, Samruddhi Complex, Chincholi ...</address>
+                    </div>
+                    <div class="divider"> </div>
+                    <div class="card-details">
+                        <table>
+                            <tr>
+                                <th>Cuisines:</th>
+                                <td>Bakery</td>
+                            </tr>
+                            <tr>
+                                <th>COST FOR TWO:</th>
+                                <td>700</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="navigator">
+                    <ul>
+                        <li><a href="#" class="navigator-items"><i class="fa fa-arrow-left"></i></a></li>
+                        <li><a href="#" class="navigator-items">1</a></li>
+                        <li><a href="#" class="navigator-items">2</a></li>
+                        <li><a href="#" class="navigator-items">3</a></li>
+                        <li><a href="#" class="navigator-items">4</a></li>
+                        <li><a href="#" class="navigator-items">5</a></li>
+                        <li><a href="#" class="navigator-items"><i class="fa fa-arrow-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="footer">footer</section> -->
+    </div>
+</body>
+</html>
